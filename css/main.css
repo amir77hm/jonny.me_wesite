@@ -253,6 +253,9 @@ nav {
         border-radius: 3rem;
         margin: 1.4rem auto;
         align-items: center; }
+        .section-A .items + div .btn-more:hover {
+          background-color: #5500ff;
+          color: #fff; }
 
 /***************************************************/
 .section-B {
