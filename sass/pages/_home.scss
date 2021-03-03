@@ -101,6 +101,15 @@
         .details {
           float: left;
 
+          .badge {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: $color-white;
+            background-color: $color-header-dark;
+            border-radius: 4px;
+            padding: 4px;
+            vertical-align: 4px;
+          }
           h3 {
             font-size: 1.7rem;
             padding-bottom: 1.5rem;
