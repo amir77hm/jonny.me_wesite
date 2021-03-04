@@ -42,31 +42,62 @@ body {
   border: none;
   cursor: pointer; }
 
-.card div {
-  position: relative; }
+.card {
+  position: relative;
+  padding: 1rem; }
+  .card .details {
+    z-index: 1; }
+  .card .d-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0; }
+    .card .d-lines::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      opacity: 0.6;
+      clip-path: polygon(0% 0%, 5rem 0%, 0% 20rem);
+      z-index: 0; }
+    .card .d-lines::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(48, 48, 48, 0.2);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 3rem, 0% 5rem);
+      border-radius: 1rem;
+      opacity: 0.8;
+      z-index: 0; }
 
-.card div::before {
-  content: "";
-  position: absolute;
-  top: -7rem;
-  left: -6rem;
-  width: 30rem;
-  height: 10rem;
-  background-color: rgba(48, 48, 48, 0.288);
-  transform: rotate(-7deg); }
+.cards li:nth-child(1) div::before,
+.cards li:nth-child(1) div::after {
+  background-color: rgba(48, 48, 48, 0.288); }
 
-.card div::after {
-  content: "";
-  position: absolute;
-  top: 2rem;
-  left: -18rem;
-  width: 30rem;
-  height: 10rem;
-  background-color: rgba(48, 48, 48, 0.288);
-  transform: rotate(-75deg); }
+.cards li:nth-child(2) div::before,
+.cards li:nth-child(2) div::after {
+  background-color: #7819ef; }
+
+.cards li:nth-child(3) div::before,
+.cards li:nth-child(3) div::after {
+  background-color: #ffcb05; }
+
+.box {
+  z-index: 6 !important; }
 
 .header {
-  background: linear-gradient(to top, #5500ff, #7819ef);
+  background: linear-gradient(to top, #6743b0, #7819ef);
   height: 85vh;
   position: relative; }
   .header .curve1 {
@@ -101,7 +132,7 @@ body {
       text-decoration: underline; }
   .header .btn-chat {
     font-size: 0.6rem;
-    background-color: #5500ff;
+    background-color: #6743b0;
     border: none;
     border-radius: 2rem;
     padding: 0.3rem 1rem 0.3rem 1.5rem;
@@ -249,12 +280,12 @@ nav {
         display: inline-block;
         padding: 0.7rem 1.7rem;
         font-size: 1rem;
-        border: 1px solid #5500ff;
+        border: 1px solid #6743b0;
         border-radius: 3rem;
         margin: 1.4rem auto;
         align-items: center; }
         .section-A .items + div .btn-more:hover {
-          background-color: #5500ff;
+          background-color: #6743b0;
           color: #fff; }
 
 /***************************************************/
@@ -288,7 +319,7 @@ nav {
             font-size: 0.7rem;
             font-weight: bold;
             color: #fff;
-            background-color: #5500ff;
+            background-color: #6743b0;
             border-radius: 4px;
             padding: 4px;
             vertical-align: 4px; }
@@ -302,29 +333,29 @@ nav {
             .section-B .items .item .text .details p + p {
               padding: 1.4rem 0 0 0; }
               .section-B .items .item .text .details p + p span {
-                color: #5500ff;
+                color: #6743b0;
                 cursor: pointer; }
                 .section-B .items .item .text .details p + p span:hover {
                   text-decoration: underline; }
           .section-B .items .item .text .details .btn {
             font-size: 1.1rem;
-            border: 1px solid #5500ff;
+            border: 1px solid #6743b0;
             padding: 0.6rem 1.6rem;
             margin-right: 1rem;
             margin-top: 2rem; }
             .section-B .items .item .text .details .btn:hover {
-              background-color: #5500ff;
+              background-color: #6743b0;
               color: #fff; }
           .section-B .items .item .text .details .acitve-btn {
             color: #fff;
-            background-color: #5500ff; }
+            background-color: #6743b0; }
             .section-B .items .item .text .details .acitve-btn:hover {
               background-color: #7819ef; }
 
 /***************************************************/
 .section-C {
   width: 100%;
-  background: linear-gradient(to top, #5500ff, #7819ef); }
+  background: linear-gradient(to top, #6743b0, #7819ef); }
   .section-C h2 {
     color: #fff;
     text-align: center;
@@ -337,7 +368,6 @@ nav {
       width: 21%;
       background-color: white;
       margin: 0 1.7rem;
-      padding: 1rem;
       border-radius: 1rem;
       display: flex;
       justify-content: center;
@@ -361,9 +391,9 @@ nav {
             background-color: #000; }
         .section-C .cards .card .btn.btn-second {
           color: #fff;
-          background-color: rgba(85, 0, 255, 0.8); }
+          background-color: rgba(103, 67, 176, 0.8); }
           .section-C .cards .card .btn.btn-second:hover {
-            background-color: #5500ff; }
+            background-color: #6743b0; }
         .section-C .cards .card .btn.btn-third {
           color: #fff;
           background-color: rgba(255, 203, 5, 0.8);
@@ -376,15 +406,15 @@ nav {
         font-size: 0.8rem;
         letter-spacing: 1px;
         padding: 0.7rem 0; }
-      .section-C .cards .card:first-child h5 {
-        text-align: center;
-        color: #414141; }
-      .section-C .cards .card:not(:first-child) h5 {
-        color: green; }
       .section-C .cards .card ul li {
         color: rgba(0, 0, 0, 0.8);
         margin: 0.5rem;
         font-size: 0.9rem; }
+    .section-C .cards li:nth-child(1) h5 {
+      color: #333; }
+    .section-C .cards li:nth-child(2) h5, .section-C .cards li:nth-child(3) h5 {
+      color: #fff;
+      z-index: 1; }
   .section-C h6 {
     text-align: center;
     color: #ccc;
@@ -451,7 +481,7 @@ nav {
         font-size: 1rem;
         padding: 0.6rem 2rem; }
         .sectoin-D form .form-btn a:hover {
-          background-color: #5500ff; }
+          background-color: #6743b0; }
 
 /***************************************************/
 .footer {
